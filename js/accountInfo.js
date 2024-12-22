@@ -26,12 +26,12 @@ document.getElementById("user").onclick = changeUserMenu;
 
 document.getElementById("clear").addEventListener("click", () => {
     localStorage.clear();
-    if (window.location.href.includes("/index.html")) window.location.reload();
+    if (window.location.href.includes("/index.html")) window.location.replace("index.html");
     else window.location.replace("../index.html");
 });
 
 document.getElementById("exit").addEventListener("click", () => {
     localStorage.removeItem(currentAccount);
-    if (window.location.href.includes("/index.html")) window.location.reload();
+    if (window.location.href.includes("/index.html")) window.location.replace("index.html");
     else window.location.replace("../index.html");
 });
