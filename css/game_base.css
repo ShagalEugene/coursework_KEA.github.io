@@ -1,0 +1,163 @@
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .description_game {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 600px;
+    padding: 30px;
+  
+    overflow: hidden;
+  }
+  
+  .game .description_game h1, .game .description_game h2, .game .description_game h3 {
+    font-family: 'customFont';
+    text-align: center;
+    font-weight: 400;
+    user-select: none;
+  }
+  
+  .game .description_game h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 5px;
+  }
+  
+  .game .description_game h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+  
+  .game .description_game h3 {
+    font-size: 18px;
+    letter-spacing: 0px;
+    margin-top: 30px;
+  }
+  
+  .game .description_game .loading {
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: width 0.25s ease, background-color 0.3s linear;
+  }
+
+  .score, .timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  
+    font-family: 'customFont';
+    font-size: 20px;
+    user-select: none;
+  }
+  
+  .score::before {
+    content: "Score:";
+  }
+
+  .timer::before {
+    content: "Time:";
+  }
+
+  .restart {
+    display: none;
+    width: 5%;
+    aspect-ratio: 1/1;
+    border: 0;
+    background-color: white;
+
+    background-image: url("../svg/restart.svg");
+    background-size: cover;
+    cursor: pointer;
+    transition: scale 0.5s ease, rotate 0.5s ease;
+  }
+
+  .restart:hover {
+    scale: 1.15;
+    rotate: 40deg;
+  }
+
+  .result {
+    display: none;
+    width: 30%;
+    height: 35%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    box-shadow: 0 0 10px 0 black;
+    border-radius: 10px;
+
+    font-family: 'customFont';
+    font-size: 30px;
+    user-select: none;
+    text-transform: uppercase;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+  }
+
+  .result::before {
+    content: "Total score:";
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .display {
+    display: flex;
+    animation: shown 1s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes shown {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+  .display_restart {
+    display: flex;
+    animation: showRestart 1.5s ease-in-out;
+  }
+
+  .good { color: green }
+  .bad { color: red }
+
+  @keyframes showRestart {
+    0% {
+      rotate: -180deg;
+      scale: 100;
+    }
+    60% {
+      rotate: -60deg;
+      scale: 1;
+    }
+    80% {
+      scale: 1.1;
+    }
+    100% {
+      rotate: 0;
+      scale: 1;
+    }
+  }

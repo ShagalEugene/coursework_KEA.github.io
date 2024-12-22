@@ -1,0 +1,126 @@
+body {
+  overflow: hidden;
+}
+
+.lvl {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px
+}
+
+.motion-path {
+    position: relative;
+    width: 700px;
+    height: 300px;
+    margin: auto;
+    outline: 1px dashed gray;
+}
+
+.square {
+    pointer-events: none;
+    position: absolute;
+    width: 50px;
+    aspect-ratio: 1/1;
+    margin: 1px;
+  }
+  
+  .car_pic {
+    background-image: url(../svg/car.svg);
+    background-size: cover;
+  }
+  
+  .follow-path {
+    position: absolute;
+    top: -27px;
+    left: -27px;
+  }
+
+  .setAnswer p {
+    letter-spacing:3px;
+    font-size: 40px;
+    margin: 0px;
+    margin-bottom: 40px;
+    font-family: 'customFont';
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .setAnswer {
+    display: flex;
+    width: 600px;
+    height: 400px;
+  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 20px;
+    z-index: 5;
+  }
+  
+  dialog {
+    border-radius: 20px;
+    background-color: #A9E4EF;
+    animation: scailingShow 0.7s ease;
+  }
+  
+  .setAnswer .description {
+    width: 500px;
+    /* margin-bottom: 50px; */
+  }
+  
+  .input_time {
+    font-family: 'customFont';
+    font-size: 22px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    border: 3px solid black;
+  }
+
+  .falling { 
+    animation: falling 3s ease;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes falling {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: 3000px;
+      filter: blur(100px);
+    }
+  }
+
+  button {
+    font-family: 'customFont';
+    border-radius: 10px;
+    font-size: 20px;
+    align-self: center;
+    text-transform: uppercase;
+  }
+
+  .control_block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+
+  .attempts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+  
+    font-family: 'customFont';
+    font-size: 20px;
+  }
+  
+  .attempts::before {
+    content: "Attempts:";
+  }

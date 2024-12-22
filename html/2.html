@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/game_2.css">
+    <link rel="stylesheet" type="text/css" href="../css/game_base.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/font.css">
+    <title>Move</title>
+</head>
+<body>
+    <header>
+        <a class="back" href="../html/game_menu.html"></a>
+        <p>move the car</p>
+        <div class="user" id="user" tabindex="0">
+          <div class="username" id="username">noname</div>
+          <div class="icon_block icon_unauthorized" id="icon"></div>
+        </div>
+    </header> 
+    <nav>
+        <ul>
+            <li id="exit" class="exit">exit</li>
+            <li id="clear" class="clear">clear db</li>
+        </ul>
+    </nav>
+
+    <div class="game">
+        <div class="description_game display">
+            <h1>Game Rules</h1>
+            <h2>A car will appear, which you can drive. Use the left mouse button to move the car and change its speed and direction. The locations that need to be visited before the time runs out will appear on the map. If the car arrives within the time limit, points will be awarded.</h2>
+            <h2>To unlock the next level, you need to score 50 points.</h2>
+            <h3>If you want to start the game, please press Enter</h3>
+            <div class="loading"></div>
+        </div>
+    
+        <div class="lvl">
+            <div class="square car_pic follow-path" id="car"></div>
+            <div class="control_block">
+                <div class="timer"></div>
+                <div class="score"></div>
+            </div>
+        </div>
+        <button class="restart"></button>
+        <div class="result"></div>
+    </div>
+
+    <script src="../js/game_2.js"></script>
+    <script src="../js/accountInfo.js"></script>
+</body>
+</html>
