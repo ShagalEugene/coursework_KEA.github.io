@@ -10,14 +10,6 @@ body {
   gap: 20px
 }
 
-.motion-path {
-    position: relative;
-    width: 700px;
-    height: 300px;
-    margin: auto;
-    outline: 1px dashed gray;
-}
-
 .square {
     pointer-events: none;
     position: absolute;

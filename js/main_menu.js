@@ -15,10 +15,3 @@ function showMainMenu() {
     document.getElementById("menu_title").innerHTML = "menu";
     document.getElementById("layer_menu").classList.add("display");
 }
-
-// document.getElementById("layer_diff").addEventListener("click", (e) => {
-//     if (e.target.tagName === "BUTTON")
-//     {
-//         showMainMenu();
-//     }
-// })

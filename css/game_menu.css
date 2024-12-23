@@ -1,10 +1,10 @@
 .level_place {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     height: 100%;
     width: 100%;
-    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .level_place .level {
@@ -77,4 +77,20 @@ p {
 .done {
     width: 40%;
     background-image: url(../svg/done.svg);
+}
+
+button {
+    width: 40px;
+    aspect-ratio: 1;
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    background-image: url(../svg/teacher.svg);
+}
+
+button:hover {
+    scale: 1.2;
+    box-shadow: 0 0 5px 0 black;
 }

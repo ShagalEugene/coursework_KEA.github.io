@@ -1,15 +1,19 @@
 body {
     margin: 0;
-    min-width: 1000px;
+    /* min-width: 1000px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     width: 100vw;
+    min-width: 657px;
+    min-height: 400px;
 }
 
 header {
     width: 100%;
+    height: 12%;
+    min-height: 70px;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -32,11 +36,12 @@ header p {
 
 .user {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
     cursor: pointer;
     user-select: none;
+    width: 200px;
+    height: 100%;
 }
 
 .user:hover, .active_user {
@@ -49,12 +54,12 @@ header p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; 
-    width: 100px;
+    width: 50%;
     margin-right: 10px;
 }
 
 .icon_block {
-    width: 80px;
+    height: 80%;
     aspect-ratio: 1/1;
     display: block;
     background-size: cover;
@@ -122,13 +127,15 @@ header p {
 
 nav {
     display: flex;
-    position: absolute;
+    position: relative;
     align-items: center;
     flex-direction: column;
     align-self: end;
     top: -100px;
     transition: top 0.3s ease-out, opacity 0.2s ease-in-out;
-    width: 210px;
+    width: 200px;
+    height: 80px;
+    min-height: 80px;
     opacity: 0;
     border-radius: 0 0 0 10px;
     overflow: hidden;
@@ -141,12 +148,13 @@ nav {
 }
 
 .top {
-    top: 100px;
+    top: 0;
 }
 
 nav ul {
     display: flex;
     flex-direction: column;
+    height: 100px;
     width: 100%;
     list-style: none;
     text-align: center;
@@ -169,17 +177,23 @@ nav ul li:hover {
 
 .main_menu {
     display: none;
-    width: 500px;
-    height: 300px;
+    /* width: 40%;
+    max-width: 500px; */
+    height: 40%;
+    max-height: 300px;
+    min-height: 200px;
+    aspect-ratio: 1.5;
+    position: absolute;
+    top: 200px;
     border-radius: 15px;
     box-shadow: 0px 5px 20px 1px grey  ;
-    margin-top: 100px;
     overflow: hidden;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    padding: 50px;
-    /* background-color: rgb(78, 206, 95); */
+    padding: 20px;
+    margin-bottom: 50px;
+    transition: all 0.5s ease;
 }
 
 .title {
@@ -247,7 +261,7 @@ nav ul li:hover {
 
 .back {
     display: flex;
-    height: 100px;
+    height: 100%;
     aspect-ratio: 1/1;
     /* margin-right: auto; */
     align-items: center;
@@ -266,4 +280,8 @@ nav ul li:hover {
   
   .back:hover {
     background-color: rgb(241, 241, 241);;
+  }
+
+  @media screen and (height < 500px) {
+    .main_menu { top: 100px;}
   }
