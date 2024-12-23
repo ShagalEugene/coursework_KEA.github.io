@@ -12,7 +12,12 @@ body {
 
 header {
     width: 100%;
+<<<<<<< HEAD
     height: 10vh;
+=======
+    height: 12%;
+    max-height: 100px;
+>>>>>>> acad290ecf4e577b30d3e14fddb69ecfcd081201
     min-height: 70px;
     display: flex;
     justify-content: end;
