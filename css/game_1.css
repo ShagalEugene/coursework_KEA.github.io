@@ -51,8 +51,8 @@ button {
 }
 
 .start {
-  margin-top: 20px;
-  align-self: center;
+  /* margin-top: 20px; */
+  justify-self: start;
 }
 
 .control_block {
@@ -82,4 +82,13 @@ button {
 
 .time::before {
   content: "Real time:";
+}
+
+@media screen and (height < 700px) {
+  .control_block {flex-direction:  row; gap: 20px;}
+  .start { align-self: center; margin-top: 0px;}
+}
+
+@media screen and (height < 550px) {
+  .lvl { gap: 10px; }
 }
