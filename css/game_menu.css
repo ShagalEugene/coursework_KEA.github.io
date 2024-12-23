@@ -97,6 +97,16 @@ button:hover {
     box-shadow: 0 0 5px 0 black;
 }
 
-@media screen and (height < 600px) {
-    .level_place .level { width: 20%;}
+@media screen and (height < 550px) {
+    .level_place .level { width: 15%;}
+}
+
+@media screen and (width < 700px) {
+    .level_place {  
+        flex-wrap: wrap;
+        padding-bottom: 100px;
+    }
+    .level_place .level {
+        width: 30%;
+    }
 }
