@@ -1,0 +1,85 @@
+body {
+  overflow: hidden;
+}
+
+
+.lvl {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  opacity: 0;
+  transition: all 0.5s;
+  top: 0;
+}
+
+.square {
+  pointer-events: none;
+  position: absolute;
+  width: 50px;
+  aspect-ratio: 1/1;
+  margin: 1px;
+}
+
+.car_pic {
+  background-image: url(../svg/car.svg);
+  background-size: cover;
+}
+
+.follow-path {
+  position: absolute;
+  top: -27px;
+  left: -27px;
+}
+
+.input_time {
+  font-family: 'customFont';
+  font-size: 22px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  border: 3px solid black;
+}
+
+button {
+  font-family: 'customFont';
+  border-radius: 10px;
+  font-size: 20px;
+
+  text-transform: uppercase;
+}
+
+.start {
+  margin-top: 20px;
+  align-self: center;
+}
+
+.control_block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.attempts, .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+
+  font-family: 'customFont';
+  font-size: 20px;
+}
+
+.attempts::before {
+  content: "Attempts:";
+}
+
+.time {
+  transition: filter 0.5s ease;
+}
+
+.time::before {
+  content: "Real time:";
+}

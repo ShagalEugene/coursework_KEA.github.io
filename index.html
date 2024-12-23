@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/authorization.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <title>Main</title>
+</head>
+<body>
+    <header>
+        <div class="user" id="user" tabindex="0">
+            <div class="username" id="username">noname</div>
+            <div class="icon_block icon_unauthorized" id="icon"></div>
+        </div>
+    </header> 
+    <nav>
+        <ul>
+            <li id="exit" class="exit">exit</li>
+            <li id="clear" class="clear">clear db</li>
+        </ul>
+    </nav>
+    <div class="login_page display" id="reg">
+        <div class="logo">
+            <label class="label">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <div class="transmission">
+                    <div class="line"></div>
+                </div>
+            </label>
+        </div>
+        <form class="login_form display" id="login_form">
+            <input type="text"  
+                id="username-login" 
+                class="username-login"
+                name="username-login" 
+                placeholder="username"
+                autocomplete="on"
+                required
+            >
+
+            <input type="password"  
+                id="password-login" 
+                class="password-login"
+                name="password-login" 
+                placeholder="password"
+                autocomplete="off"
+                required
+            >
+            <button id="btn-submit-login">login</button>
+        </form>
+        
+        <form class="signup_form" id="signup_form">
+            <input type="text"  
+                id="name-signup" 
+                class="name-signup"
+                name="name-signup" 
+                placeholder="name"
+                autocomplete="on"
+                required
+            >
+
+            <input type="text"  
+                id="username-signup" 
+                class="username-signup"
+                name="username-signup" 
+                placeholder="username"
+                autocomplete="on"
+                required
+            >
+
+            <input type="email"  
+                id="email-signup" 
+                class="email-signup"
+                name="email-signup" 
+                placeholder="email"
+                autocomplete="on"
+            >
+            <!-- pattern="^[0-9a-zA-Z]([0-9a-zA-Z\.\-]*[0-9a-zA-Z])?@[0-9a-zA-Z]([0-9a-zA-Z\-]*)[0-9a-zA-Z](\.[0-9a-zA-Z][0-9a-zA-Z\-]*[0-9a-zA-Z])+$" -->
+
+            <input type="password"  
+                id="password-signup" 
+                class="password-signup"
+                name="password-signup" 
+                placeholder="password"
+                autocomplete="off"    
+                required
+            >
+            <!-- pattern="^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*[0-9]).*$" -->
+
+            <button id="btn-submit-signup">sign up</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+
+    <div class="main_menu">
+        <div class="title" id="menu_title">menu</div>
+        <div class="layer display" id="layer_menu">
+            <button id="start_button">start</button>
+            <!-- <button id="difficulty_button">difficulty</button> -->
+            <button id="rating_button">rating</button>
+        </div>
+        <!-- <div class="layer" id="layer_diff">
+            <button id="easy">easy</button>
+            <button id="medium">medium</button>
+            <button id="hard">hard</button>
+        </div> -->
+    </div>
+
+    <script src="js/accountInfo.js"></script>
+    <script src="js/authorization.js"></script>
+    <script src="js/main_menu.js"></script>
+</body>
+</html>
