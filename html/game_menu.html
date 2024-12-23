@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/game_menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/font.css">
+    <title>Game</title>
+</head>
+<body>
+    <header>
+      <a class="back" href="../index.html"></a>
+      <p>levels</p>
+      <div class="user" id="user" tabindex="0">
+        <div class="username" id="username">noname</div>
+        <div class="icon_block icon_unauthorized" id="icon"></div>
+      </div>
+    </header> 
+    <nav>
+        <ul>
+            <li id="exit" class="exit">exit</li>
+            <li id="clear" class="clear">clear db</li>
+        </ul>
+    </nav>
+
+    
+    <div class="level_place">
+      <a class="level" id="1" href="../html/1.html">
+        <div class="background timer"></div>
+        <a href="../html/1.html"><button></button></a>
+      </a>
+      <a class="level" id="2" href="../html/2.html">
+        <div class="background cursor"></div>
+        <a href="../html/2.html"><button></button></a>
+      </a>
+      <a class="level" id="3" href="../html/3.html">
+        <div class="background explosion"></div>
+        <a href="../html/3.html"><button></button></a>
+      </a>
+    </div>
+
+    <script src="../js/accountInfo.js"></script>
+    <script src="../js/game_menu.js"></script>
+</body>
+</html>
