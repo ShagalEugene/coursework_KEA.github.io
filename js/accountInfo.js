@@ -30,6 +30,8 @@ document.getElementById("clear").addEventListener("click", () => {
     else window.location.replace("../index.html");
 });
 
+console.log(window.location.href);
+
 document.getElementById("exit").addEventListener("click", () => {
     localStorage.removeItem(currentAccount);
     // if (window.location.href.includes("/index.html")) window.location.reload();
