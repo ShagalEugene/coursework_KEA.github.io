@@ -11,7 +11,8 @@ const scoreBlock = document.querySelector(".score");
 const car = document.querySelector(".square");
 const lvl = document.querySelector(".lvl");
 const btnRestart = document.querySelector(".restart");
-
+const gameArea = document.querySelector(".game");
+let id;
 const wdtCar = 70;
 
 lvl.addEventListener('mousedown', function(e) {
@@ -22,7 +23,7 @@ lvl.addEventListener('mousedown', function(e) {
     if (!isMoving)
     {
         isMoving = true;
-        setInterval(moveCar, 15);
+        id = setInterval(moveCar, 15);
 
         setTime(curSeconds);
         scoreBlock.innerHTML = '0';
@@ -63,6 +64,7 @@ document.addEventListener("keydown", (e) => {
             car.style.left = `${parseInt(Math.random() * (window.innerWidth - wdtCar))}px`;
 
             isLoaded = true;
+            car.classList.toggle("display");
             generateArea();
         }
 
@@ -86,28 +88,22 @@ document.addEventListener("keyup", (e) => {
 function moveCar()
 {
     car.style.transform = `rotate(${0}deg)`;
-
+    let rect = gameArea.getBoundingClientRect();
     let pos = car.getBoundingClientRect();
     let newPosX = pos.x + speedX;
-    let newPosY = pos.y + speedY;
+    let newPosY = pos.y + speedY - rect.y;
+
     if (newPosX > window.innerWidth) newPosX = -100;
     else if (newPosX < -100) newPosX = window.innerWidth;
-    if (newPosY > window.innerHeight) newPosY = 0;
-    else if (newPosY < 0) newPosY = window.innerHeight;
+    if (newPosY > window.innerHeight) newPosY = -rect.y;
+    else if (newPosY < -rect.y) newPosY = window.innerHeight;
 
     car.style.transform = `rotate(${angle + 90}deg)`;
 
     car.style.top = `${newPosY}px`;
     car.style.left = `${newPosX}px`;
 
-    let infoBlockpos = infoBlock.getBoundingClientRect()
-    let lenToInfoBlock = Math.sqrt(Math.pow(infoBlockpos.left + infoBlockpos.width / 2 - newPosX, 2) + Math.pow(infoBlockpos.top + infoBlockpos.height / 2 - newPosY, 2));
-
-    if (lenToInfoBlock < 180)
-        infoBlock.style.filter = `blur(1px)`;
-    else infoBlock.style.filter = `blur(0px)`;
-
-    const classUnder = document.elementFromPoint(newPosX + wdtCar/2, newPosY + wdtCar/2);
+    const classUnder = document.elementFromPoint(newPosX + wdtCar/2, newPosY + wdtCar/2 + rect.y);
 
     if (classUnder.className == "area")
     {
@@ -135,13 +131,13 @@ function generateArea()
     
     let wdtDiv = div.getBoundingClientRect().width;
 
-    let x = parseInt(Math.random() * (window.innerHeight - 2*wdtDiv) + 120);
-    let y = parseInt(Math.random() * (window.innerWidth - wdtDiv));
+    let x = parseInt(Math.random() * (gameArea.innerHeight - 2*wdtDiv) + 120);
+    let y = parseInt(Math.random() * (gameArea.innerWidth - wdtDiv));
 
-    while (document.elementFromPoint(x, y) == infoBlock)
-    {
-        x = parseInt(Math.random() * (window.innerHeight - 2*wdtDiv) + 120);
-    }
+    // while (document.elementFromPoint(x, y) == infoBlock)
+    // {
+    //     x = parseInt(Math.random() * (window.innerHeight - 2*wdtDiv) + 120);
+    // }
     
     div.style.top = `${parseInt(Math.random() * (window.innerHeight - 2*wdtDiv) + 120)}px`;
     div.style.left = `${parseInt(Math.random() * (window.innerWidth - wdtDiv))}px`;
@@ -151,7 +147,7 @@ function timer()
 {
     curSeconds -= 1;
     if (curSeconds == -1) endGame();
-    else setTime(curSeconds);
+    setTime(curSeconds);
 }
 
 function setTime(seconds)
@@ -161,7 +157,9 @@ function setTime(seconds)
 
 function endGame() 
 {
+    clearInterval(id);
     clearInterval(curInterval);
+    car.classList.toggle("display");
     levelBlock.classList.toggle("display");
 
     const result = document.querySelector(".result");

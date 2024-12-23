@@ -93,14 +93,17 @@
   .restart {
     display: none;
     width: 5%;
+    min-width: 50px;
+    max-width: 100px;
     aspect-ratio: 1/1;
     border: 0;
+    top: 40px;
     background-color: white;
-
+    position: relative;
     background-image: url("../svg/restart.svg");
     background-size: cover;
     cursor: pointer;
-    transition: scale 0.5s ease, rotate 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   .restart:hover {
@@ -110,11 +113,15 @@
 
   .result {
     display: none;
+    max-width: 400px;
+    min-width: 270px;
     width: 30%;
+    max-height: 150px;
     height: 35%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px;
     gap: 10px;
 
     box-shadow: 0 0 10px 0 black;
@@ -128,6 +135,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; 
+    transition: all 0.5s ease;
   }
 
   .result::before {
@@ -223,8 +231,10 @@
       margin-top: 10px;
     }
 
-    .lvl { scale: 0.8; }
+    .lvl, .restart, .result { scale: 0.8; }
+    .restart {top: 50px}
     .game {top: -80px; }
+    
 
   .setAnswer p {
     font-size: 25px;

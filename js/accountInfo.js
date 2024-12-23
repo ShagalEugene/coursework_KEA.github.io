@@ -32,6 +32,13 @@ document.getElementById("clear").addEventListener("click", () => {
 
 document.getElementById("exit").addEventListener("click", () => {
     localStorage.removeItem(currentAccount);
-    if (window.location.href.includes("/index.html")) window.location.reload();
-    else window.location.replace("../index.html");
+    // if (window.location.href.includes("/index.html")) window.location.reload();
+    // else window.location.replace("../index.html");
+
+    try {
+        window.location.replace("../index.html");
+    }
+    catch {
+        window.location.replace("index.html");
+    }
 });

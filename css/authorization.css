@@ -5,11 +5,10 @@ body {
 .login_page {
     height: 100%;
     width: 100%;
-    display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    margin-top: 20px;
     display: none;
     top: 0;
     transition: scale 0.5s ease, top 0.5s ease;
@@ -248,4 +247,8 @@ form button {
         scale: 0.8; 
         top: -60px;
     }
+}
+
+@media screen and (width < 690px){
+    .logo::after, .logo::before { display: none; }
 }

@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     background-size: cover;
+    transition: all 0.5s ease;
 }
 
 .level_place .level:hover {
@@ -93,4 +94,8 @@ button {
 button:hover {
     scale: 1.2;
     box-shadow: 0 0 5px 0 black;
+}
+
+@media screen and (height < 550px) {
+    .level_place .level { width: 20%;}
 }

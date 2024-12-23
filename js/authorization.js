@@ -97,8 +97,6 @@ document.getElementById("btn-submit-signup").addEventListener("click", (e) => {
         return;
     }
 
-    console.log(password.value);
-
     if (password.value == "")
     {
         writeMessage(msg, "the password field is blank");
