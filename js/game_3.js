@@ -167,7 +167,7 @@ function endGame()
     let account = JSON.parse(localStorage[localStorage[currentAccount]]);
     account.score += scoreNum;
 
-    account.currentLevel = Math.max(account.currentLevel, 3);
+    account.currentLevel = Math.max(account.currentLevel, 4);
     localStorage[localStorage[currentAccount]] = JSON.stringify(account);
     result.classList.toggle("good");
   } else 
