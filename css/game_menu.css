@@ -9,6 +9,7 @@
 
 .level_place .level {
     width: 23%;
+    max-width: 270px;
     aspect-ratio: 1/1.2;
     margin: 20px;
     border-radius: 20px;
@@ -96,6 +97,6 @@ button:hover {
     box-shadow: 0 0 5px 0 black;
 }
 
-@media screen and (height < 550px) {
+@media screen and (height < 600px) {
     .level_place .level { width: 20%;}
 }
