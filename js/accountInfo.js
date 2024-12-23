@@ -26,21 +26,19 @@ document.getElementById("user").onclick = changeUserMenu;
 
 document.getElementById("clear").addEventListener("click", () => {
     localStorage.clear();
-    if (window.location.href.includes("/index.html")) window.location.reload();
-    else window.location.replace("../index.html");
+    goToIndex();
 });
 
 console.log(window.location.href);
 
 document.getElementById("exit").addEventListener("click", () => {
     localStorage.removeItem(currentAccount);
-    // if (window.location.href.includes("/index.html")) window.location.reload();
-    // else window.location.replace("../index.html");
-    // try {
-    //     window.location.replace("../index.html");
-    // }
-    // catch {
-    //     window.location.replace("index.html");
-    // }
-    console.log(window.location.href);
+    goToIndex();
 });
+
+function goToIndex()
+{
+    if (window.location.href === "https://shagaleugene.github.io/coursework_KEA.github.io/index.html" ||
+       window.location.href === "https://shagaleugene.github.io/coursework_KEA.github.io/") window.location.reload();
+    else window.location.replace("../index.html");
+}
