@@ -1,0 +1,102 @@
+.level_place {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100%;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.level_place .level {
+    width: 23%;
+    max-width: 270px;
+    aspect-ratio: 1/1.2;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px 5px grey;
+    transition: box-shadow 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.level_place .level:hover {
+    box-shadow: 0 0 10px 5px black;
+}
+
+header {
+    justify-content: space-between;
+}
+
+p {
+    font-family: 'customFont';
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.background {
+    position: relative;
+    aspect-ratio: 1/1;
+    background-size: cover;
+}
+
+.timer {
+    width: 70%;
+    background-image: url(../svg/timer.svg);
+}
+
+.cursor {
+    width: 55%;
+    background-image: url(../svg/swipe.svg);
+}
+
+.explosion {
+    width: 65%;
+    background-image: url(../svg/explosion.svg);
+}
+
+.closed {
+    width: 70%;
+    background-image: url(../svg/closed.svg);
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.level.disable {
+    background-color: rgb(204, 204, 204);   
+    box-shadow: 0 0 10px 0 inset black;
+}
+
+.done {
+    width: 40%;
+    background-image: url(../svg/done.svg);
+}
+
+button {
+    width: 40px;
+    aspect-ratio: 1;
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background-image: url(../svg/teacher.svg);
+}
+
+button:hover {
+    scale: 1.2;
+    box-shadow: 0 0 5px 0 black;
+}
+
+@media screen and (height < 600px) {
+    .level_place .level { width: 20%;}
+}
