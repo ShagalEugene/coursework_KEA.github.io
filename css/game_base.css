@@ -231,9 +231,9 @@
       margin-top: 10px;
     }
 
-    .lvl, .restart, .result { scale: 0.8; }
+    .restart, .result { scale: 0.8; }
     .restart {top: 50px}
-    .game {top: -80px; }
+    /* .game {top: -80px; } */
     
 
   .setAnswer p {
@@ -243,9 +243,9 @@
   input { scale: 0.8; }
 }
 
-@media screen and (height < 550px) {
+/* @media screen and (height < 550px) {
   .lvl { scale: 0.7; }
-}
+} */
 
 dialog {
   border-radius: 20px;
